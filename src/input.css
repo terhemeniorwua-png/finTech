@@ -3,3 +3,6 @@
 @theme{
    --color-blueviolet: #8a2be2;
 }
+.flag{
+   @apply bg-gray-100 border-3 flex items-center space-x-3 rounded-2xl p-2  border-gray-200
+}
