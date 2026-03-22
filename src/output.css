@@ -7,6 +7,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-purple-400: oklch(71.4% 0.203 305.504);
+    --color-purple-950: oklch(29.1% 0.149 302.717);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-neutral-400: oklch(70.8% 0 0);
+    --color-black: #000;
 
     --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-purple-400: oklch(71.4% 0.203 305.504);
@@ -51,6 +56,9 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-black: 900;
     --text-8xl: 6rem;
     --text-8xl--line-height: 1;
     --text-9xl: 8rem;
@@ -241,6 +249,23 @@
   }
 }
 @layer utilities {
+  .m-auto {
+    margin: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .mt-40 {
+    margin-top: calc(var(--spacing) * 40);
   .relative {
     position: relative;
 
@@ -468,6 +493,9 @@
   .table {
     display: table;
   }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
 
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -489,6 +517,18 @@
   }
   .h-12 {
     height: calc(var(--spacing) * 12);
+  }
+  .h-13 {
+    height: calc(var(--spacing) * 13);
+  }
+  .h-full {
+    height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
   }
 
   .h-16 {
@@ -524,6 +564,8 @@
   .w-\[85\%\] {
     width: 85%;
   }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   .w-\[92\%\] {
     width: 92%;
   }
@@ -576,6 +618,8 @@
   .resize {
     resize: both;
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
 
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -712,6 +756,14 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-black {
+    border-color: var(--color-black);
+  }
+  .border-blueviolet {
+    border-color: var(--color-blueviolet);
+  }
+  .bg-black {
+    background-color: var(--color-black);
 
   .border-2 {
     border-style: var(--tw-border-style);
@@ -750,6 +802,24 @@
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
+  }
+  .bg-purple-400 {
+    background-color: var(--color-purple-400);
+  }
+  .bg-purple-950 {
+    background-color: var(--color-purple-950);
+  }
+  .mask-radial-from-neutral-400 {
+    mask-image: var(--tw-mask-linear), var(--tw-mask-radial), var(--tw-mask-conic);
+    mask-composite: intersect;
+    --tw-mask-radial-stops: var(--tw-mask-radial-shape) var(--tw-mask-radial-size) at var(--tw-mask-radial-position), var(--tw-mask-radial-from-color) var(--tw-mask-radial-from-position), var(--tw-mask-radial-to-color) var(--tw-mask-radial-to-position);
+    --tw-mask-radial: radial-gradient(var(--tw-mask-radial-stops));
+    --tw-mask-radial-from-color: var(--color-neutral-400);
+  }
+  .pt-40 {
+    padding-top: calc(var(--spacing) * 40);
   .bg-gray-400 {
     background-color: var(--color-gray-400);
 
@@ -972,6 +1042,13 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -1074,6 +1151,8 @@
   .pb-32 {
     padding-bottom: calc(var(--spacing) * 32);
   }
+  .text-blueviolet {
+    color: var(--color-blueviolet);
   .pl-1 {
     padding-left: calc(var(--spacing) * 1);
   }
@@ -1216,6 +1295,52 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-mask-linear {
+  syntax: "*";
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+@property --tw-mask-radial {
+  syntax: "*";
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+@property --tw-mask-conic {
+  syntax: "*";
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+@property --tw-mask-radial-from-position {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-mask-radial-to-position {
+  syntax: "*";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-mask-radial-from-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: black;
+}
+@property --tw-mask-radial-to-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: transparent;
+}
+@property --tw-mask-radial-shape {
+  syntax: "*";
+  inherits: false;
+  initial-value: ellipse;
+}
+@property --tw-mask-radial-size {
+  syntax: "*";
+  inherits: false;
+  initial-value: farthest-corner;
+}
+@property --tw-mask-radial-position {
 
 
 @property --tw-gradient-position {
@@ -1244,6 +1369,7 @@
 @property --tw-gradient-via-stops {
   syntax: "*";
   inherits: false;
+  initial-value: center;
 }
 @property --tw-gradient-from-position {
   syntax: "<length-percentage>";
@@ -1276,6 +1402,16 @@
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
+      --tw-mask-linear: linear-gradient(#fff, #fff);
+      --tw-mask-radial: linear-gradient(#fff, #fff);
+      --tw-mask-conic: linear-gradient(#fff, #fff);
+      --tw-mask-radial-from-position: 0%;
+      --tw-mask-radial-to-position: 100%;
+      --tw-mask-radial-from-color: black;
+      --tw-mask-radial-to-color: transparent;
+      --tw-mask-radial-shape: ellipse;
+      --tw-mask-radial-size: farthest-corner;
+      --tw-mask-radial-position: center;
 
 
       --tw-gradient-position: initial;
