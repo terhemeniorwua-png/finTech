@@ -3,3 +3,9 @@
 @theme{
    --color-blueviolet: #8a2be2;
 }
+
+a,img:hover{
+   transform: scale(1.1);
+   transition:0.5s;
+}
+
