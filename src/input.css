@@ -4,8 +4,12 @@
    --color-blueviolet: #8a2be2;
 }
 
-a,img:hover{
+a, .scale:hover{
    transform: scale(1.1);
    transition:0.5s;
 }
 
+.flag{
+   padding: 50px;
+   background-color: rgba(255, 255, 255, 0.289);
+}
